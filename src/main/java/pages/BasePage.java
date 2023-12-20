@@ -11,7 +11,7 @@ import org.testng.annotations.BeforeMethod;
 
 public class BasePage {
     public static WebDriver driver;
-    private String BASE_URL = "https://www.lambdatest.com/selenium-playground/";
+    private String BASE_URL = "https://fasttrackit-test.netlify.app/#/";
 
     public BasePage() {
 
