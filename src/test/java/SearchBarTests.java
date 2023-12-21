@@ -18,13 +18,37 @@ public class SearchBarTests extends BasePage {
 
     }
     @Test
-    public void enterAMessageAndClickOnSearchButton(){
+    public void enterAFirstMessageAndClickOnSearchButton(){
         driver.get("https://fasttrackit-test.netlify.app/#/");
         SearchBarPage.enterTextInSearchField("practical");
         SearchBarPage.GetClickOnSearchButton();
         String actualResult = driver.findElement(By.xpath("/html/body/div/div/div[2]/div[2]/div[2]/div[1]/div/div[1]/a")).getAttribute("innerText");
         System.out.println(actualResult);
-        Assert.assertTrue(actualResult.contains("Practical"));
+        Assert.assertTrue(actualResult.contains("Practical Wooden Bacon"));
+
+
+    }
+
+    @Test
+    public void enterASecondMessageAndClickOnSearchButton(){
+        driver.get("https://fasttrackit-test.netlify.app/#/");
+        SearchBarPage.enterTextInSearchField("awesome");
+        SearchBarPage.GetClickOnSearchButton();
+        String actualResult = driver.findElement(By.xpath("/html/body/div/div/div[2]/div[2]/div[2]/div[1]/div/div[1]/a")).getAttribute("innerText");
+        System.out.println(actualResult);
+        Assert.assertTrue(actualResult.contains("Awesome Granite Chips"));
+
+
+    }
+
+    @Test
+    public void enterAThirdMessageAndClickOnSearchButton(){
+        driver.get("https://fasttrackit-test.netlify.app/#/");
+        SearchBarPage.enterTextInSearchField("Soft");
+        SearchBarPage.GetClickOnSearchButton();
+        String actualResult = driver.findElement(By.xpath("/html/body/div/div/div[2]/div[2]/div[2]/div[1]/div/div[1]/a")).getAttribute("innerText");
+        System.out.println(actualResult);
+        Assert.assertTrue(actualResult.contains("Awesome Soft Shirt"));
 
 
     }
