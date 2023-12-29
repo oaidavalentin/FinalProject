@@ -20,17 +20,18 @@ public class LoginPage extends BasePage {
     private WebElement UserNameField;
 
     public void EnterTextInUsernameField(String text){
-        UserNameField.sendKeys();
+        UserNameField.sendKeys(text);
 
     }
     @FindBy(id = "password")
     private WebElement PasswordField;
 
     public void EnterTextInPasswordField(String text) {
-        PasswordField.sendKeys();
+
+        PasswordField.sendKeys(text);
     }
 
-    @FindBy(css = "btn btn-primary")
+    @FindBy(css = ".btn-primary")
     private WebElement LoginSecondButton;
 
     public void GetClickOnTheSecondLoginButton() {

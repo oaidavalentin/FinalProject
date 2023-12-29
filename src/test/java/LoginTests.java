@@ -21,9 +21,10 @@ public class LoginTests extends BasePage {
         driver.get("https://fasttrackit-test.netlify.app/#/");
         LoginPage.GetClickOnLoginButton();
         LoginPage.EnterTextInUsernameField("dino");
-        LoginPage.EnterTextInPasswordField("choochoo ");
+        LoginPage.EnterTextInPasswordField("choochoo");
         LoginPage.GetClickOnTheSecondLoginButton();
-        String actualResult = driver.findElement(By.xpath("//*[@id=\"responsive-navbar-nav\"]/div[2]/span/span/span/a")).getAttribute("innerText");
+
+        String actualResult = driver.findElement(By.cssSelector("a[href='#/account']")).getAttribute("innerText");
         System.out.println(actualResult);
         Assert.assertTrue(actualResult.contains("dino"));
     }
