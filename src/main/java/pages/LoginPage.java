@@ -38,8 +38,6 @@ public class LoginPage extends BasePage {
         LoginSecondButton.click();
     }
 
-    @FindBy(xpath = "//*[@id=\"responsive-navbar-nav\"]/div[2]/span/span/span/a")
-    private WebElement VerifyUsername;
 
 
 }

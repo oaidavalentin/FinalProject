@@ -27,4 +27,29 @@ public class LoginTests extends BasePage {
         System.out.println(actualResult);
         Assert.assertTrue(actualResult.contains("dino"));
     }
+    @Test
+    public void EnterASecondUsernameAndAPassword(){
+        LoginPage.GetClickOnLoginButton();
+        LoginPage.EnterTextInUsernameField("beetle");
+        LoginPage.EnterTextInPasswordField("choochoo");
+        LoginPage.GetClickOnTheSecondLoginButton();
+
+        String actualResult = driver.findElement(By.cssSelector("a[href='#/account']")).getAttribute("innerText");
+        System.out.println(actualResult);
+        Assert.assertTrue(actualResult.contains("beetle"));
+    }
+
+    @Test
+    public void EnterAThirdUsernameAndAPassword(){
+        LoginPage.GetClickOnLoginButton();
+        LoginPage.EnterTextInUsernameField("turtle");
+        LoginPage.EnterTextInPasswordField("choochoo");
+        LoginPage.GetClickOnTheSecondLoginButton();
+
+        String actualResult = driver.findElement(By.cssSelector("a[href='#/account']")).getAttribute("innerText");
+        System.out.println(actualResult);
+        Assert.assertTrue(actualResult.contains("turtle"));
+    }
+
+
 }
