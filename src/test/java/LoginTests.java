@@ -18,7 +18,6 @@ public class LoginTests extends BasePage {
     }
     @Test
     public void EnterAUsernameAndAPassword(){
-        driver.get("https://fasttrackit-test.netlify.app/#/");
         LoginPage.GetClickOnLoginButton();
         LoginPage.EnterTextInUsernameField("dino");
         LoginPage.EnterTextInPasswordField("choochoo");

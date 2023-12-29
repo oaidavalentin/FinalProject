@@ -21,4 +21,22 @@ public class SortPage extends BasePage{
     public void selectFirstOptionFromTheList() {
         SelectFirstOption.click();
     }
+
+    @FindBy(css = "option[value=za]")
+    private WebElement SelectSecondOption;
+    public void selectSecondOptionFromTheList() {
+        SelectSecondOption.click();
+    }
+
+    @FindBy(css = "option[value=lohi]")
+    private WebElement SelectThirdOption;
+    public void selectThirdOptionFromTheList() {
+        SelectThirdOption.click();
+    }
+
+    @FindBy(css = "option[value=hilo]")
+    private WebElement SelectFourthOption;
+    public void selectFourthOptionFromTheList() {
+        SelectFourthOption.click();
+    }
 }

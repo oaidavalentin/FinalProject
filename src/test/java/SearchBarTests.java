@@ -31,7 +31,6 @@ public class SearchBarTests extends BasePage {
 
     @Test
     public void enterASecondMessageAndClickOnSearchButton(){
-        driver.get("https://fasttrackit-test.netlify.app/#/");
         SearchBarPage.enterTextInSearchField("awesome");
         SearchBarPage.GetClickOnSearchButton();
         String actualResult = driver.findElement(By.xpath("/html/body/div/div/div[2]/div[2]/div[2]/div[1]/div/div[1]/a")).getAttribute("innerText");
