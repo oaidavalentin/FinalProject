@@ -24,4 +24,14 @@ public class CartTests extends BasePage {
         Assert.assertTrue(actualResult.contains("2"));
 
     }
+    @Test
+    public void CheckIfFourItemsWereAdded() {
+        CartPage.ClickOnIncredibleConcreteHatCart();
+        CartPage.ClickOnLicenseSteelGlovesCart();
+        CartPage.ClickOnPracticalMetalMouseCart();
+        CartPage.ClickOnPracticalWoodenBaconCart();
+        String actualResult = driver.findElement(By.cssSelector(".shopping_cart_badge")).getAttribute("innerText");
+        System.out.println(actualResult);
+        Assert.assertTrue(actualResult.contains("4"));
+    }
 }
