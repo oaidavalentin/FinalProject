@@ -66,5 +66,11 @@ public class CartPage extends BasePage{
     public void ClickOnTheMinusButton() {
         MinusButton.click();
     }
+    @FindBy (css = ".fa-trash")
+    private WebElement DeleteButton;
+
+    public void ClickOnDeleteButton() {
+        DeleteButton.click();
+    }
 
 }

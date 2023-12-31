@@ -60,4 +60,14 @@ public class CartTests extends BasePage {
         System.out.println(actualResult);
         Assert.assertTrue(actualResult.contains("2"));
     }
+    @Test
+    public void CheckIfProductWereDeletedAfterWeClickOnDeleteButton() {
+        CartPage.ClickOnAwesomeGraniteChipsCart();
+        CartPage.ClickOnAwesomeGraniteChipsCart();
+        CartPage.ClickOnShoppingCartBadge();
+        CartPage.ClickOnDeleteButton();
+        String actualResult = driver.findElement(By.cssSelector("#root > div > div:nth-child(2) > div.text-center.container")).getAttribute("innerText");
+        System.out.println(actualResult);
+        Assert.assertTrue(actualResult.contains("How about adding some products in your cart?"));
+    }
 }
