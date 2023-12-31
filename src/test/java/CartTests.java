@@ -34,4 +34,30 @@ public class CartTests extends BasePage {
         System.out.println(actualResult);
         Assert.assertTrue(actualResult.contains("4"));
     }
+
+    @Test
+    public void CheckIfProductWereAddedAfterWeClickOnPlusButton(){
+        CartPage.ClickOnAwesomeGraniteChipsCart();
+        CartPage.ClickOnAwesomeGraniteChipsCart();
+        CartPage.ClickOnShoppingCartBadge();
+        CartPage.ClickOnThePlusButton();
+        CartPage.ClickOnThePlusButton();
+        CartPage.ClickOnThePlusButton();
+        String actualResult = driver.findElement(By.cssSelector(".shopping_cart_badge")).getAttribute("innerText");
+        System.out.println(actualResult);
+        Assert.assertTrue(actualResult.contains("5"));
+    }
+    @Test
+    public void CheckIfProductWereDeletedAfterWeClickOnMinusButton(){
+        CartPage.ClickOnAwesomeGraniteChipsCart();
+        CartPage.ClickOnAwesomeGraniteChipsCart();
+        CartPage.ClickOnAwesomeGraniteChipsCart();
+        CartPage.ClickOnAwesomeGraniteChipsCart();
+        CartPage.ClickOnShoppingCartBadge();
+        CartPage.ClickOnTheMinusButton();
+        CartPage.ClickOnTheMinusButton();
+        String actualResult = driver.findElement(By.cssSelector(".shopping_cart_badge")).getAttribute("innerText");
+        System.out.println(actualResult);
+        Assert.assertTrue(actualResult.contains("2"));
+    }
 }

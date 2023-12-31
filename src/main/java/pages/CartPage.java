@@ -51,4 +51,20 @@ public class CartPage extends BasePage{
     @FindBy (css = ".shopping_cart_badge")
     private WebElement ShoppingCartNumber;
 
+    public void ClickOnShoppingCartBadge() {
+        ShoppingCartNumber.click();
+    }
+    @FindBy (css = ".fa-plus-circle")
+    private WebElement PlusButton;
+
+    public void ClickOnThePlusButton() {
+        PlusButton.click();
+    }
+    @FindBy (css = ".fa-minus-circle")
+    private WebElement MinusButton;
+
+    public void ClickOnTheMinusButton() {
+        MinusButton.click();
+    }
+
 }
