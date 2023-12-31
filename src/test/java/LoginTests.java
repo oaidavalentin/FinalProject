@@ -52,4 +52,40 @@ public class LoginTests extends BasePage {
     }
 
 
+    @Test
+    public void EnterAInvalidUsernameAndAValidPassword(){
+        LoginPage.GetClickOnLoginButton();
+        LoginPage.EnterTextInUsernameField("vali");
+        LoginPage.EnterTextInPasswordField("choochoo");
+        LoginPage.GetClickOnTheSecondLoginButton();
+
+        String actualResult = driver.findElement(By.cssSelector("body > div.fade.modal.show > div > div > div.login_wrapper > div > form > p")).getAttribute("innerText");
+        System.out.println(actualResult);
+        Assert.assertTrue(actualResult.contains("Incorrect username or password!"));
+
+}
+    @Test
+    public void EnterAValidUsernameAndAInvalidPassword(){
+        LoginPage.GetClickOnLoginButton();
+        LoginPage.EnterTextInUsernameField("dino");
+        LoginPage.EnterTextInPasswordField("password");
+        LoginPage.GetClickOnTheSecondLoginButton();
+
+        String actualResult = driver.findElement(By.cssSelector("body > div.fade.modal.show > div > div > div.login_wrapper > div > form > p")).getAttribute("innerText");
+        System.out.println(actualResult);
+        Assert.assertTrue(actualResult.contains("Incorrect username or password!"));
+
+    }
+    @Test
+    public void EnterAInvalidUsernameAndAInvalidPassword(){
+        LoginPage.GetClickOnLoginButton();
+        LoginPage.EnterTextInUsernameField("vali");
+        LoginPage.EnterTextInPasswordField("password");
+        LoginPage.GetClickOnTheSecondLoginButton();
+
+        String actualResult = driver.findElement(By.cssSelector("body > div.fade.modal.show > div > div > div.login_wrapper > div > form > p")).getAttribute("innerText");
+        System.out.println(actualResult);
+        Assert.assertTrue(actualResult.contains("Incorrect username or password!"));
+
+    }
 }

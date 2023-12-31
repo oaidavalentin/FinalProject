@@ -38,6 +38,9 @@ public class LoginPage extends BasePage {
         LoginSecondButton.click();
     }
 
+    @FindBy(css = "body > div.fade.modal.show > div > div > div.login_wrapper > div > form > p")
+    private WebElement CheckTheMessageIfUsernameIsWorng;
+
 
 
 }
