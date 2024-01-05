@@ -46,6 +46,12 @@ public class CartPage extends BasePage{
         PracticalWoodenBaconCart.click();
     }
 
+    @FindBy (css = ".fa-shopping-cart")
+    private WebElement ShoppingCart;
+    public void ClickOnShoppingCart() {
+        ShoppingCart.click();
+    }
+
 
 
     @FindBy (css = ".shopping_cart_badge")
