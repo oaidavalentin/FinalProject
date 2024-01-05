@@ -39,7 +39,10 @@ public class LoginPage extends BasePage {
     }
 
     @FindBy(css = "body > div.fade.modal.show > div > div > div.login_wrapper > div > form > p")
-    private WebElement CheckTheMessageIfUsernameIsWorng;
+    private WebElement CheckTheMessageIfUsernameIsWrong;
+
+    @FindBy (xpath = "http://html/body/div[3]/div/div/div[2]/div/form/p/text()")
+    private WebElement CheckTheMessageIfUsernameIsLocked;
 
 
 

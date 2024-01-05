@@ -16,8 +16,9 @@ public class LoginTests extends BasePage {
         LoginPage = new LoginPage(driver);
 
     }
+
     @Test
-    public void EnterAUsernameAndAPassword(){
+    public void EnterAUsernameAndAPassword() {
         LoginPage.GetClickOnLoginButton();
         LoginPage.EnterTextInUsernameField("dino");
         LoginPage.EnterTextInPasswordField("choochoo");
@@ -27,8 +28,9 @@ public class LoginTests extends BasePage {
         System.out.println(actualResult);
         Assert.assertTrue(actualResult.contains("dino"));
     }
+
     @Test
-    public void EnterASecondUsernameAndAPassword(){
+    public void EnterASecondUsernameAndAPassword() {
         LoginPage.GetClickOnLoginButton();
         LoginPage.EnterTextInUsernameField("beetle");
         LoginPage.EnterTextInPasswordField("choochoo");
@@ -40,7 +42,7 @@ public class LoginTests extends BasePage {
     }
 
     @Test
-    public void EnterAThirdUsernameAndAPassword(){
+    public void EnterAThirdUsernameAndAPassword() {
         LoginPage.GetClickOnLoginButton();
         LoginPage.EnterTextInUsernameField("turtle");
         LoginPage.EnterTextInPasswordField("choochoo");
@@ -53,7 +55,7 @@ public class LoginTests extends BasePage {
 
 
     @Test
-    public void EnterAInvalidUsernameAndAValidPassword(){
+    public void EnterAInvalidUsernameAndAValidPassword() {
         LoginPage.GetClickOnLoginButton();
         LoginPage.EnterTextInUsernameField("vali");
         LoginPage.EnterTextInPasswordField("choochoo");
@@ -63,9 +65,10 @@ public class LoginTests extends BasePage {
         System.out.println(actualResult);
         Assert.assertTrue(actualResult.contains("Incorrect username or password!"));
 
-}
+    }
+
     @Test
-    public void EnterAValidUsernameAndAInvalidPassword(){
+    public void EnterAValidUsernameAndAInvalidPassword() {
         LoginPage.GetClickOnLoginButton();
         LoginPage.EnterTextInUsernameField("dino");
         LoginPage.EnterTextInPasswordField("password");
@@ -76,8 +79,9 @@ public class LoginTests extends BasePage {
         Assert.assertTrue(actualResult.contains("Incorrect username or password!"));
 
     }
+
     @Test
-    public void EnterAInvalidUsernameAndAInvalidPassword(){
+    public void EnterAInvalidUsernameAndAInvalidPassword() {
         LoginPage.GetClickOnLoginButton();
         LoginPage.EnterTextInUsernameField("vali");
         LoginPage.EnterTextInPasswordField("password");
@@ -87,5 +91,17 @@ public class LoginTests extends BasePage {
         System.out.println(actualResult);
         Assert.assertTrue(actualResult.contains("Incorrect username or password!"));
 
+    }
+
+    @Test
+    public void EnterAValidUsernameAndSecondValidPassword() {
+        LoginPage.GetClickOnLoginButton();
+        LoginPage.EnterTextInUsernameField("locked");
+        LoginPage.EnterTextInPasswordField("choochoo");
+        LoginPage.GetClickOnTheSecondLoginButton();
+
+        String actualResult = driver.findElement(By.cssSelector("body > div.fade.modal.show > div > div > div.login_wrapper > div > form > p")).getAttribute("innerText");
+        System.out.println(actualResult);
+        Assert.assertTrue(actualResult.contains("The user has been locked out."));
     }
 }
