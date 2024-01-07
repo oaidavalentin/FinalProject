@@ -27,4 +27,16 @@ public class UserTests extends BasePage {
         System.out.println(actualResult);
         Assert.assertTrue(actualResult.contains("1"));
     }
+
+    @Test
+    public void LoginTurtleUserAndCheckIfAItemIsAddedToTheWishList(){
+        UserPage.GetClickOnLoginButton();
+        UserPage.EnterTextInUsernameField("turtle");
+        UserPage.EnterTextInPasswordField("choochoo");
+        UserPage.GetClickOnTheSecondLoginButton();
+        UserPage.AddAwesomeMetalChairToWishList();
+        String actualResult = driver.findElement(By.cssSelector("#responsive-navbar-nav > div:nth-child(2) > span > a:nth-child(2) > span")).getAttribute("innerText");
+        System.out.println(actualResult);
+        Assert.assertTrue(actualResult.contains("1"));
+    }
 }
