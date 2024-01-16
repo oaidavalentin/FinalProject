@@ -18,11 +18,10 @@ public class SearchBarTests extends BasePage {
 
     }
     @Test
-    public void enterAFirstMessageAndClickOnSearchButton(){
-        driver.get("https://fasttrackit-test.netlify.app/#/");
+    public void enterPracticalMessageAndClickOnSearchButton(){
         SearchBarPage.enterTextInSearchField("practical");
         SearchBarPage.GetClickOnSearchButton();
-        String actualResult = driver.findElement(By.xpath("/html/body/div/div/div[2]/div[2]/div[2]/div[1]/div/div[1]/a")).getAttribute("innerText");
+        String actualResult = driver.findElement(By.id("root")).getAttribute("innerText");
         System.out.println(actualResult);
         Assert.assertTrue(actualResult.contains("Practical Wooden Bacon"));
 
@@ -30,10 +29,10 @@ public class SearchBarTests extends BasePage {
     }
 
     @Test
-    public void enterASecondMessageAndClickOnSearchButton(){
+    public void enterAwesomeMessageAndClickOnSearchButton(){
         SearchBarPage.enterTextInSearchField("awesome");
         SearchBarPage.GetClickOnSearchButton();
-        String actualResult = driver.findElement(By.xpath("/html/body/div/div/div[2]/div[2]/div[2]/div[1]/div/div[1]/a")).getAttribute("innerText");
+        String actualResult = driver.findElement(By.id("root")).getAttribute("innerText");
         System.out.println(actualResult);
         Assert.assertTrue(actualResult.contains("Awesome Granite Chips"));
 
@@ -41,11 +40,10 @@ public class SearchBarTests extends BasePage {
     }
 
     @Test
-    public void enterAThirdMessageAndClickOnSearchButton(){
-        driver.get("https://fasttrackit-test.netlify.app/#/");
+    public void enterSoftMessageAndClickOnSearchButton(){
         SearchBarPage.enterTextInSearchField("Soft");
         SearchBarPage.GetClickOnSearchButton();
-        String actualResult = driver.findElement(By.xpath("/html/body/div/div/div[2]/div[2]/div[2]/div[1]/div/div[1]/a")).getAttribute("innerText");
+        String actualResult = driver.findElement(By.id("root")).getAttribute("innerText");
         System.out.println(actualResult);
         Assert.assertTrue(actualResult.contains("Awesome Soft Shirt"));
 

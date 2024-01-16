@@ -16,7 +16,7 @@ public class SearchBarPage extends BasePage{
     public void enterTextInSearchField(String text) {
         searchField.sendKeys(text);
     }
-    @FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/div[2]/div[1]/form/div[1]/button")
+    @FindBy(id = "root")
     private WebElement clickOnSearchButton;
     public void GetClickOnSearchButton() {
         clickOnSearchButton.click();
