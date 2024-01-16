@@ -16,7 +16,7 @@ public class HomeTests extends BasePage {
 
     }
     @Test
-    public void ClickOnReloadPageAfterLoginDinoUserAndCheckTheResult(){
+    public void ClickOnHomePageButtonAfterLoginDinoUserAndCheckTheResult(){
         HomePage.GetClickOnLoginButton();
         HomePage.EnterTextInUsernameField("dino");
         HomePage.EnterTextInPasswordField("choochoo");
