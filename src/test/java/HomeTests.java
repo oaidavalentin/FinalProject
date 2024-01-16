@@ -22,7 +22,7 @@ public class HomeTests extends BasePage {
         HomePage.EnterTextInPasswordField("choochoo");
         HomePage.GetClickOnTheSecondLoginButton();
         HomePage.ClickOnHomeButton();
-        String actualResult = driver.findElement(By.cssSelector("#responsive-navbar-nav > div:nth-child(2) > span > span > span > a")).getAttribute("innerText");
+        String actualResult = driver.findElement(By.id("responsive-navbar-nav")).getAttribute("innerText");
         System.out.println(actualResult);
         Assert.assertTrue(actualResult.contains("dino"));
     }

@@ -39,7 +39,7 @@ public class HomePage extends BasePage{
         LoginSecondButton.click();
     }
 
-    @FindBy(xpath = "//*[@id=\"responsive-navbar-nav\"]/div[2]/span/span/span/a")
+    @FindBy(id = "responsive-navbar-nav")
     private WebElement CheckTheNameOfTheUser;
 
     @FindBy(css = ".fa-shopping-bag")
