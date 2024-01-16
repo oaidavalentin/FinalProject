@@ -5,8 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class ReloadPage extends BasePage{
-    public ReloadPage(WebDriver driver) {
+public class HomePage extends BasePage{
+    public HomePage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }
@@ -42,10 +42,10 @@ public class ReloadPage extends BasePage{
     @FindBy(xpath = "//*[@id=\"responsive-navbar-nav\"]/div[2]/span/span/span/a")
     private WebElement CheckTheNameOfTheUser;
 
-    @FindBy(css = "button[title='Reset the application state']")
-    private WebElement ReloadButton;
+    @FindBy(css = ".fa-shopping-bag")
+    private WebElement HomeButton;
 
-    public void ClickOnReloadButton(){
-        ReloadButton.click();
-    }
+    public void ClickOnHomeButton(){
+        HomeButton.click();
+   }
 }
