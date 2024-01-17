@@ -49,5 +49,31 @@ public class SearchBarTests extends BasePage {
 
 
     }
+    @Test
+    public void enterIncredibleMessageAndClickOnSearchButton(){
+        SearchBarPage.enterTextInSearchField("incredible");
+        SearchBarPage.GetClickOnSearchButton();
+        String actualResult = driver.findElement(By.id("root")).getAttribute("innerText");
+        System.out.println(actualResult);
+        Assert.assertTrue(actualResult.contains("Incredible Concrete Hat"));
+    }
+
+    @Test
+    public void enterLicensedMessageAndClickOnSearchButton(){
+        SearchBarPage.enterTextInSearchField("licensed");
+        SearchBarPage.GetClickOnSearchButton();
+        String actualResult = driver.findElement(By.id("root")).getAttribute("innerText");
+        System.out.println(actualResult);
+        Assert.assertTrue(actualResult.contains("Licensed Steel Gloves"));
+    }
+
+    @Test
+    public void enterRefinedMessageAndClickOnSearchButton(){
+        SearchBarPage.enterTextInSearchField("refined");
+        SearchBarPage.GetClickOnSearchButton();
+        String actualResult = driver.findElement(By.id("root")).getAttribute("innerText");
+        System.out.println(actualResult);
+        Assert.assertTrue(actualResult.contains("Refined Frozen Mouse"));
+    }
 
 }
