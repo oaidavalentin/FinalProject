@@ -46,6 +46,32 @@ public class CartPage extends BasePage{
         PracticalWoodenBaconCart.click();
     }
 
+    @FindBy(css = "#root > div > div:nth-child(2) > div:nth-child(2) > div.row.row-cols-xl-4.row-cols-lg-3.row-cols-md-2.row-cols-sm-2.row-cols-1 > div:nth-child(3) > div > div.text-muted.text-center.card-footer > button:nth-child(2) > svg > path")
+    private WebElement AwesomeSoftShirt;
+    public void ClickOnAwesomeSoftShirtCart() {
+        AwesomeSoftShirt.click();
+    }
+
+    @FindBy(css = "#root > div > div:nth-child(2) > div:nth-child(2) > div.row.row-cols-xl-4.row-cols-lg-3.row-cols-md-2.row-cols-sm-2.row-cols-1 > div:nth-child(4) > div > div.text-muted.text-center.card-footer > button:nth-child(2) > svg > path")
+    private WebElement GorgeousSoftPizza;
+
+    public void ClickOnGorgeousSoftPizzaCart() {
+        GorgeousSoftPizza.click();
+    }
+    @FindBy(css = "#root > div > div:nth-child(2) > div:nth-child(2) > div.row.row-cols-xl-4.row-cols-lg-3.row-cols-md-2.row-cols-sm-2.row-cols-1 > div:nth-child(9) > div > div.text-muted.text-center.card-footer > button:nth-child(2) > svg > path")
+    private WebElement SecondPracticalWoodenBacon;
+
+    public void ClickOnSecondPracticalWoodenBaconCart() {
+        SecondPracticalWoodenBacon.click();
+    }
+    @FindBy(css = "#root > div > div:nth-child(2) > div:nth-child(2) > div.row.row-cols-xl-4.row-cols-lg-3.row-cols-md-2.row-cols-sm-2.row-cols-1 > div:nth-child(10) > div > div.text-muted.text-center.card-footer > button:nth-child(2) > svg > path")
+    private WebElement RefinedFrozenMouse;
+
+    public void ClickOnRefinedFrozenMouseCart() {
+        RefinedFrozenMouse.click();
+    }
+
+
     @FindBy (css = ".fa-shopping-cart")
     private WebElement ShoppingCart;
     public void ClickOnShoppingCart() {

@@ -78,4 +78,21 @@ public class CartTests extends BasePage {
         System.out.println(actualResult);
         Assert.assertTrue(actualResult.contains("How about adding some products in your cart?"));
     }
+    @Test
+    public void CheckIfAllItemsWereAdded() {
+        CartPage.ClickOnAwesomeGraniteChipsCart();
+        CartPage.ClickOnAwesomeMetalChairCart();
+        CartPage.ClickOnAwesomeSoftShirtCart();
+        CartPage.ClickOnGorgeousSoftPizzaCart();
+        CartPage.ClickOnIncredibleConcreteHatCart();
+        CartPage.ClickOnLicenseSteelGlovesCart();
+        CartPage.ClickOnPracticalMetalMouseCart();
+        CartPage.ClickOnPracticalWoodenBaconCart();
+        CartPage.ClickOnSecondPracticalWoodenBaconCart();
+        CartPage.ClickOnRefinedFrozenMouseCart();
+        String actualResult = driver.findElement(By.cssSelector(".shopping_cart_badge")).getAttribute("innerText");
+        System.out.println(actualResult);
+        Assert.assertTrue(actualResult.contains("10"));
+    }
+
 }
