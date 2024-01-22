@@ -18,7 +18,7 @@ public class LoginTests extends BasePage {
     }
 
     @Test
-    public void EnterAUsernameAndAPassword() {
+    public void EnterDinoUsernameAndThePassword() {
         LoginPage.GetClickOnLoginButton();
         LoginPage.EnterTextInUsernameField("dino");
         LoginPage.EnterTextInPasswordField("choochoo");
@@ -30,7 +30,7 @@ public class LoginTests extends BasePage {
     }
 
     @Test
-    public void EnterASecondUsernameAndAPassword() {
+    public void EnterBeetleUsernameAndThePassword() {
         LoginPage.GetClickOnLoginButton();
         LoginPage.EnterTextInUsernameField("beetle");
         LoginPage.EnterTextInPasswordField("choochoo");
@@ -42,7 +42,7 @@ public class LoginTests extends BasePage {
     }
 
     @Test
-    public void EnterAThirdUsernameAndAPassword() {
+    public void EnterTurtleUsernameAndThePassword() {
         LoginPage.GetClickOnLoginButton();
         LoginPage.EnterTextInUsernameField("turtle");
         LoginPage.EnterTextInPasswordField("choochoo");
@@ -68,7 +68,7 @@ public class LoginTests extends BasePage {
     }
 
     @Test
-    public void EnterAValidUsernameAndAInvalidPassword() {
+    public void EnterDinoUsernameAndAInvalidPassword() {
         LoginPage.GetClickOnLoginButton();
         LoginPage.EnterTextInUsernameField("dino");
         LoginPage.EnterTextInPasswordField("password");
@@ -94,7 +94,7 @@ public class LoginTests extends BasePage {
     }
 
     @Test
-    public void EnterAValidUsernameAndSecondValidPassword() {
+    public void EnterLockedUsernameAndAValidPassword() {
         LoginPage.GetClickOnLoginButton();
         LoginPage.EnterTextInUsernameField("locked");
         LoginPage.EnterTextInPasswordField("choochoo");
