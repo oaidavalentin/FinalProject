@@ -106,7 +106,7 @@ public class CartTests extends BasePage {
         CartPage.ClickOnShoppingCart();
         String actualResult = driver.findElement(By.cssSelector("#root > div > div:nth-child(2) > div.text-center.container")).getAttribute("innerText");
         System.out.println(actualResult);
-        Assert.assertTrue(actualResult.contains("2"));
+        Assert.assertTrue(actualResult.contains("How about adding some products in your cart?"));
     }
 
     @Test
