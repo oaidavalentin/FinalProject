@@ -95,4 +95,31 @@ public class CartTests extends BasePage {
         Assert.assertTrue(actualResult.contains("10"));
     }
 
+    @Test
+    public void LoginBeetleUserAndAddTwoItemsToTheCartAndCheckIfThereWereAdded() {
+        CartPage.GetClickOnLoginButton();
+        CartPage.EnterTextInUsernameField("beetle");
+        CartPage.EnterTextInPasswordField("choochoo");
+        CartPage.GetClickOnTheSecondLoginButton();
+        CartPage.ClickOnAwesomeGraniteChipsCart();
+        CartPage.ClickOnAwesomeMetalChairCart();
+        CartPage.ClickOnShoppingCart();
+        String actualResult = driver.findElement(By.cssSelector("#root > div > div:nth-child(2) > div.text-center.container")).getAttribute("innerText");
+        System.out.println(actualResult);
+        Assert.assertTrue(actualResult.contains("2"));
+    }
+
+    @Test
+    public void LoginTurtleUserAndAddTwoItemsToTheCartAndCheckTheResult() {
+        CartPage.GetClickOnLoginButton();
+        CartPage.EnterTextInUsernameField("turtle");
+        CartPage.EnterTextInPasswordField("choochoo");
+        CartPage.GetClickOnTheSecondLoginButton();
+        CartPage.ClickOnAwesomeGraniteChipsCart();
+        CartPage.ClickOnAwesomeMetalChairCart();
+        String actualResult = driver.findElement(By.cssSelector(".shopping_cart_badge")).getAttribute("innerText");
+        System.out.println(actualResult);
+        Assert.assertTrue(actualResult.contains("2"));
+
+    }
 }
