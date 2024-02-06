@@ -48,4 +48,27 @@ public class OrderTests extends BasePage {
         System.out.println(actualResult);
         Assert.assertTrue(actualResult.contains("Thank you for your order!"));
     }
+
+    @Test
+    public void AddAProductTheCartInDinoUserThenGoToTheShoppingCartAndAddAnotherProductAfterPressTheButtonContinueShoppingAndCompleteTheOrder(){
+        OrderPage.GetClickOnLoginButton();
+        OrderPage.EnterTextInUsernameField("dino");
+        OrderPage.EnterTextInPasswordField("choochoo");
+        OrderPage.GetClickOnTheSecondLoginButton();
+        OrderPage.ClickOnAwesomeGraniteChipsCart();
+        OrderPage.ClickOnShoppingCart();
+        OrderPage.GetClickOnContinueShoppingButton();
+        OrderPage.ClickOnPracticalMetalMouseCart();
+        OrderPage.ClickOnShoppingCart();
+        OrderPage.ClickOnCheckoutButton();
+        OrderPage.EnterNameInFirstNameField("Oaida");
+        OrderPage.EnterNameInLastNameField("Valentin");
+        OrderPage.EnterAddressInAddressField("Strada Vai nr 7");
+        OrderPage.ClickOnContinueCheckoutButton();
+        OrderPage.ClickOnCompleteYourOrderButton();
+        String actualResult = driver.findElement(By.cssSelector(".text-center")).getAttribute("innerText");
+        System.out.println(actualResult);
+        Assert.assertTrue(actualResult.contains("Thank you for your order!"));
+
+    }
 }
