@@ -104,4 +104,17 @@ public class LoginTests extends BasePage {
         System.out.println(actualResult);
         Assert.assertTrue(actualResult.contains("The user has been locked out."));
     }
+
+    @Test
+    public void LoginDinoUserAndThenLogOutDinoUser() {
+        LoginPage.GetClickOnLoginButton();
+        LoginPage.EnterTextInUsernameField("dino");
+        LoginPage.EnterTextInPasswordField("choochoo");
+        LoginPage.GetClickOnTheSecondLoginButton();
+        LoginPage.GetClickOnLogoutButton();
+        String actualResult = driver.findElement(By.cssSelector("#responsive-navbar-nav > div:nth-child(2) > span > span > span")).getAttribute("innerText");
+        System.out.println(actualResult);
+        Assert.assertTrue(actualResult.contains("Hello guest!"));
+
+    }
 }

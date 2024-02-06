@@ -44,6 +44,13 @@ public class LoginPage extends BasePage {
     @FindBy (xpath = "http://html/body/div[3]/div/div/div[2]/div/form/p/text()")
     private WebElement CheckTheMessageIfUsernameIsLocked;
 
+    @FindBy(css= "#responsive-navbar-nav > div:nth-child(2) > span > span > button")
+    private WebElement LogOutButton;
+
+    public void GetClickOnLogoutButton() {
+        LogOutButton.click();
+    }
+
 
 
 }
