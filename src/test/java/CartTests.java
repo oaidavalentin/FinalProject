@@ -122,4 +122,19 @@ public class CartTests extends BasePage {
         Assert.assertTrue(actualResult.contains("2"));
 
     }
+
+    @Test
+    public void ChickOnTheFirstProductInDinoUserAndAddToTheCartListAndCheckTheResult() {
+        CartPage.GetClickOnLoginButton();
+        CartPage.EnterTextInUsernameField("dino");
+        CartPage.EnterTextInPasswordField("choochoo");
+        CartPage.GetClickOnTheSecondLoginButton();
+        CartPage.GetClickOnAwesomeGraniteChipsLinkText();
+        CartPage.ClickOnAwesomeGraniteChipsCartInNewPage();
+        String actualResult = driver.findElement(By.cssSelector(".shopping_cart_badge")).getAttribute("innerText");
+        System.out.println(actualResult);
+        Assert.assertTrue(actualResult.contains("1"));
+
+    }
+
 }

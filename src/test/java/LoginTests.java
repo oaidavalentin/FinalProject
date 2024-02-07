@@ -117,4 +117,30 @@ public class LoginTests extends BasePage {
         Assert.assertTrue(actualResult.contains("Hello guest!"));
 
     }
+
+    @Test
+    public void LoginBeetleUserAndThenLogOutBeetleUser() {
+        LoginPage.GetClickOnLoginButton();
+        LoginPage.EnterTextInUsernameField("beetle");
+        LoginPage.EnterTextInPasswordField("choochoo");
+        LoginPage.GetClickOnTheSecondLoginButton();
+        LoginPage.GetClickOnLogoutButton();
+        String actualResult = driver.findElement(By.cssSelector("#responsive-navbar-nav > div:nth-child(2) > span > span > span")).getAttribute("innerText");
+        System.out.println(actualResult);
+        Assert.assertTrue(actualResult.contains("Hello guest!"));
+
+    }
+
+    @Test
+    public void LoginTurtleUserAndThenLogOutTurtleUser() {
+        LoginPage.GetClickOnLoginButton();
+        LoginPage.EnterTextInUsernameField("turtle");
+        LoginPage.EnterTextInPasswordField("choochoo");
+        LoginPage.GetClickOnTheSecondLoginButton();
+        LoginPage.GetClickOnLogoutButton();
+        String actualResult = driver.findElement(By.cssSelector("#responsive-navbar-nav > div:nth-child(2) > span > span > span")).getAttribute("innerText");
+        System.out.println(actualResult);
+        Assert.assertTrue(actualResult.contains("Hello guest!"));
+
+    }
 }

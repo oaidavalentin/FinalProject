@@ -133,6 +133,22 @@ public class CartPage extends BasePage{
         LoginSecondButton.click();
     }
 
+    @FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/div[2]/div[2]/div[1]/div/div[1]/a")
+
+     private WebElement AwesomeGraniteChipsLinkText;
+
+    public void GetClickOnAwesomeGraniteChipsLinkText() {
+        AwesomeGraniteChipsLinkText.click();
+    }
+
+    @FindBy(css = "#root > div > div:nth-child(2) > div:nth-child(2) > div > div.col.col-lg-2.text-center.col > button:nth-child(2) > svg")
+
+    private WebElement AwesomeGraniteChipsCartAfterClickOnLinkText;
+
+    public void ClickOnAwesomeGraniteChipsCartInNewPage() {
+        AwesomeGraniteChipsCartAfterClickOnLinkText.click();
+    }
+
 
 
 }
