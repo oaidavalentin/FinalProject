@@ -137,4 +137,18 @@ public class CartTests extends BasePage {
 
     }
 
+    @Test
+    public void AddTwoProductsAtTheCartAndLoginDinoUserAndCheckIfThereWereAddedAfterLogin() {
+        CartPage.ClickOnAwesomeGraniteChipsCart();
+        CartPage.ClickOnRefinedFrozenMouseCart();
+        CartPage.GetClickOnLoginButton();
+        CartPage.EnterTextInUsernameField("dino");
+        CartPage.EnterTextInPasswordField("choochoo");
+        CartPage.GetClickOnTheSecondLoginButton();
+        String actualResult = driver.findElement(By.cssSelector(".shopping_cart_badge")).getAttribute("innerText");
+        System.out.println(actualResult);
+        Assert.assertTrue(actualResult.contains("2"));
+
+    }
+
 }
