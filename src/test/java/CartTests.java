@@ -95,7 +95,7 @@ public class CartTests extends BasePage {
         Assert.assertTrue(actualResult.contains("10"));
     }
 
-    @Test
+    @Test // The products are not added to the cart in beetle user (bug)
     public void LoginBeetleUserAndAddTwoItemsToTheCartAndCheckIfThereWereAdded() {
         CartPage.GetClickOnLoginButton();
         CartPage.EnterTextInUsernameField("beetle");
