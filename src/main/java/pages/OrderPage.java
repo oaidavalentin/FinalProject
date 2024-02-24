@@ -105,6 +105,31 @@ public class OrderPage extends BasePage{
         PracticalMetalMouseCart.click();
     }
 
+    @FindBy(css = "#root > div > div:nth-child(2) > div:nth-child(2) > div > div.col.col-lg-2.text-center.col > button:nth-child(2) > svg")
+    private WebElement AwesomeGraniteChipsCartInTheProductPage;
 
+    public void GetClickOnAwesomeGraniteChipsCartInTheProductPage() {
+        AwesomeGraniteChipsCartInTheProductPage.click();
+    }
+    @FindBy (css = ".fa-plus-circle")
+    private WebElement PlusButton;
+
+    public void ClickOnThePlusButton() {
+        PlusButton.click();
+    }
+
+    @FindBy(css = "#root > div > div:nth-child(2) > div:nth-child(2) > div > div.col.col-lg-2.text-center.col > button:nth-child(2) > svg")
+    private WebElement AwesomeMetalChairCartInTheProductPage;
+
+    public void GetClickOnAwesomeMetalChairCartInTheProductPage() {
+        AwesomeMetalChairCartInTheProductPage.click();
+    }
+
+    @FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/div[2]/div[3]/a[2]")
+    private WebElement CheckoutButtonForNewTests;
+
+    public void ClickOnCheckoutButtonForNewTests() {
+        CheckoutButtonForNewTests.click();
+    }
 
 }

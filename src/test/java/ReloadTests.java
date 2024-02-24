@@ -35,7 +35,7 @@ public class ReloadTests extends BasePage {
         Assert.assertTrue(actualResult.contains("Hello guest!"));
     }
 
-    @Test  // The Product should be still added after reloading page but the test fails
+    @Test  // The product should be still added after reloading page but the product added isn't
     public void AddAProductToCartAndThenClickOnReloadPageAndCheckIfTheProductIsStillAdded() {
         ReloadPage.ClickOnAwesomeGraniteChipsCart();
         ReloadPage.ClickOnReloadButton();
